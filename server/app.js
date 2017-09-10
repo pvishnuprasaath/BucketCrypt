@@ -2,10 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const CryptoJS = require("crypto-js")
 const routes=require('./routes/api')
-
+const cors = require('cors')
 const app = express()
 
 app.use(bodyParser.json())
+app.use(cors())
 app.use('/api',routes)
 //app.use(express.static('public'))
 

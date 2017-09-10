@@ -31,19 +31,19 @@ router.post('/rsa/enc',function(req,res){
 });
 
 router.get('/rsa/dec',function(req,res){
-    var result={};
-    var key="final";
-    result[key]=[];
+    // var result={};
+    // var key="final";
+    // result[key]=[];
     dataRef.on("value", function(snapshot) {
         var data = snapshot.val();
         console.log(data);
         for(el in data){
             data[el].cipher=rsa.decryptStringWithRsaPrivateKey(data[el].cipher,'./public/cert/privateKey.PEM')
-           result[key].push(data[el]); 
+           //result[key].push(data[el]); 
         }
-        console.log(JSON.stringify(result));
-        res.send(JSON.stringify(result));
-      }); 
+        //console.log(JSON.stringify(result));
+        res.send(data);
+    }); 
     
 });
 
