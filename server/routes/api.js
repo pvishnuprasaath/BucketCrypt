@@ -43,9 +43,7 @@ router.get('/rsa/dec',function(req,res){
         }
         console.log(JSON.stringify(result));
         res.send(JSON.stringify(result));
-      });
-    // var plainText=rsa.decryptStringWithRsaPrivateKey(req.body.cipher,'./cert/privateKey.PEM')
-    // console.log(plainText)    
+      }); 
     
 });
 
